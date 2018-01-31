@@ -1,0 +1,16 @@
+{
+  "name": "ele-test-app",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kdsplus<kdsplus@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "electron-log": "^1.3.0",
+    "electron-updater": "^1.16.0"
+  }
+}

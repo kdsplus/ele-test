@@ -1,0 +1,48 @@
+{
+  "name": "ele-test",
+  "version": "1.0.0",
+  "description": "",
+  "main":"./app/main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron ./app --enable-logging",
+    "dev": "npm run start",
+    "build": "npm run build:win",
+    "build:win": "npm run build:win32 && npm run build:win64",
+    "build:win32": "build --win --ia32",
+    "build:win64": "build --win --x64",
+    "pack": "build -mwl --dir",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kdsplus<kdsplus@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.11",
+    "electron-builder": "^19.55.3"
+  },
+  "build": {
+    "appId": "ele-test-app",
+    "productName": "ele-test-app",
+    "publish": {
+      "provider": "github",
+      "owner": "kdsplus",
+      "repo": "ele-test"
+    },
+    "win": {
+      "target": [
+        "zip", "nsis"
+      ],
+      "icon":"./build/icon.ico"
+    },
+    "nsis":{
+      "oneClick" : false,
+      "allowToChangeInstallationDirectory" :true
+    },
+    "directories": {
+      "buildResources": "./build",
+      "output": "dist/",
+      "app": "."
+    }
+  }
+}
